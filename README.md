@@ -20,20 +20,106 @@ Os dados a serem ingeridos e analisados em nossa plataforma de Big Data são dad
 
 -1) Sua primeira tarefa consiste em escrever uma aplicação para calcular o ganho total da empresa, o qual é obtido a partir da taxa administrativa do serviço de cartão de crédito para seus clientes. Esse ganho é calculado sobre um percentual das transações de cartão de crédito realizadas por eles. O cálculo é baseado no conjunto de dados abaixo, transacao, contrato e cliente da <a href="https://drive.google.com/file/d/1lA2eLHNMoMpApPGz6h7WQpphT9URWxB1/view?usp=sharing">Figura 1</a>.
 
+![Figura 1](assets/Figura%201.png)
+
 O resultado esperado é uma consulta que retorne o ganho total da empresa por cliente que é 1.198,77 para o cliente A e 1,08 para o cliente B, conforme a <a href="https://drive.google.com/file/d/1KJ9SvkcRX94YQDyKI01ivG-5N3lZp3T1/view?usp=sharing">Figura 2</a>.
+
+![Figura 2](assets/Figura%202.png)
 
 Assim sendo, seguem <a href="https://drive.google.com/file/d/1lqZZb9WgkyyL7qBZ5ZAPENVYoioK2hMs/view?usp=sharing">snippet de código</a> para criação da base de dados e dos dados exemplos (via SQL Server).
 
+<a href ="entregavel_1">Acessar resposta</a>
+
 -2) A segunda tarefa consiste em calcular o total líquido da empresa. Esse total é calculado da seguinte forma total_liquido = soma(total_bruto – desconto_percentual). O cálculo é baseado no conjunto de dados da <a href="https://drive.google.com/file/d/1vekbII5FYAB57mMTwU9I64XRCATD_XqF/view?usp=sharing">Figura 3</a>
 
+![Figura 3](assets/Figura%203.png)
+
 O resultado esperado é uma código com pyspark que retorne o total liquido da empresa que é 59973.46. 
+
+<a href ="entregavel_2">Acessar resposta</a>
 
 -3) O terceiro entregável consiste na transformação de dados disponíveis em <a href="https://drive.google.com/file/d/1IDCjpDZh5St97jw4K_bAewJ8hf-rax9C/view?usp=sharing">arquivo Json</a> para o formato de dataframe, algo comum no dia a dia da empresa. Após transformar esse Json em dataframe é possível perceber que a coluna "item_list" está como dicionário. Seu gestor pediu dois pontos de atenção nessa tarefa:
 
 - Expandir a coluna num mesmo dataframe;
 - Normalizar os itens dessa coluna de dicionário e dividí-los em dois dataframes separados, seguindo o modelo relacional.
 
+<a href ="entregavel_3">Acessar resposta</a>
+
+~~~JSON
+[
+   {
+      "CreateDate":"2021-05-24T20:21:34.79",
+      "EmissionDate":"2021-05-24T00:00:00",
+      "Discount":0.0,
+      "NFeNumber":501,
+      "NFeID":1,
+      "ItemList":[
+         {
+            "ProductName":"Rice",
+            "Value":35.55,
+            "Quantity":2
+         },
+         {
+            "ProductName":"Flour",
+            "Value":11.55,
+            "Quantity":5
+         },
+         {
+            "ProductName":"Bean",
+            "Value":27.15,
+            "Quantity":7
+         }
+      ]
+   },
+   {
+      "CreateDate":"2021-05-24T20:21:34.79",
+      "EmissionDate":"2021-05-24T00:00:00",
+      "Discount":0.0,
+      "NFeNumber":502,
+      "NFeID":2,
+      "ItemList":[
+         {
+            "ProductName":"Tomate",
+            "Value":12.25,
+            "Quantity":10
+         },
+         {
+            "ProductName":"Pasta",
+            "Value":7.55,
+            "Quantity":5
+         }
+      ]
+   },
+   {
+      "CreateDate":"2021-05-24T20:21:34.79",
+      "EmissionDate":"2021-05-24T00:00:00",
+      "Discount":0.0,
+      "NFeNumber":503,
+      "NFeID":3,
+      "ItemList":[
+         {
+            "ProductName":"Beer",
+            "Value":9.00,
+            "Quantity":6
+         },
+         {
+            "ProductName":"French fries",
+            "Value":10.99,
+            "Quantity":2
+         },
+         {
+            "ProductName":"Ice cream",
+            "Value":27.15,
+            "Quantity":1
+         }
+      ]
+   }
+]
+~~~
+
 -4) Imagine que o Json das notas fiscais é disponibilizado em uma API. Como você utilizaria as tecnologias da GCP para ingerir, transformar e, eventualmente, carregar esses dados em um BigTable? O quarto entregável consiste na construção de uma arquitetura de ingestão dos dados de nota fiscal do entregável anterior (como visto <a href="https://www.crystalloids.com/hs-fs/hubfs/Screenshot%202022-02-04%20at%2009-44-40-png.png?width=1232&name=Screenshot%202022-02-04%20at%2009-44-40-png.png">aqui</a>), a qual deve atender aos seguintes pontos:
+
+![Figura 4](assets/Screenshot%202022-02-04%20at%2009-44-40-png.webp)
 
 - Esquemas de fluxo de dados;
 - Descrições de funcionamento (se necessário);
@@ -50,18 +136,4 @@ Ou seja, temos quatro entregáveis:
 - Resolução de problema de transformação de dados (NF-e);
 - Arquitetura exemplo da ingestão anterior (ecossistema GCP);
 
-## O que será avaliado?
-
-1. Buscamos soluções bem definidas e baseadas em método: soube mostrar quais as hipóteses levantadas? Precisou ao menos de modo resumido o por que escolheu determinado caminho? Quais os prós e contras usados para se basear essa solução e quais os passos para implementá-la?
-2. Qualidades dos entregáveis, tanto as soluções quanto a arquitetura proposta.
-3. Se tivesse mais tempo, o que você faria para melhorar a sua solução?
-
-
-## 
-
-“Perception is strong and sight weak. In strategy it is important to see distant things as if they were close and to take a distanced view of close things.”
-
-Miyamoto Musashi. Japanese martial artist, philosopher, strategist, writer, artist (1584-1645).
-
-がんばろう
-
+<a href ="entregavel_4">Acessar resposta</a>
