@@ -152,7 +152,7 @@ Como nesse entregavel temos um acesso direto ao banco de dados, escolhi utilizar
 >> ~~~
 >>
 > ### Por fim
-> Se utilizou a criação de procedure, utilize abaixo o código para selecioná-la no SGDB
+> Se utilizou a criação de procedure, utilize abaixo o <a href="sel_procedure.sql">código para selecioná-la no SGDB.</a>
 >> ~~~SQL
 >> USE [desafio_engenheiro];
 >> GO
@@ -163,7 +163,7 @@ Como nesse entregavel temos um acesso direto ao banco de dados, escolhi utilizar
 
 Exemplo de código Python para exibir os dados solicitados:
 
-> <a href="exibir_consulta.py">Buscando pelo consulta SQL:</a>
+> <a href="exibir_consulta.py">Buscando pela consulta SQL:</a>
 >> ~~~python
 >> import pandas as pd
 >> import pyodbc
