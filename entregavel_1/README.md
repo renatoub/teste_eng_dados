@@ -163,7 +163,7 @@ Como nesse entregavel temos um acesso direto ao banco de dados, escolhi utilizar
 
 Exemplo de código Python para exibir os dados solicitados:
 
-> Buscando pelo consulta SQL:
+> <a href="exibir_consulta.py">Buscando pelo consulta SQL:</a>
 >> ~~~python
 >> import pandas as pd
 >> import pyodbc
@@ -179,7 +179,15 @@ Exemplo de código Python para exibir os dados solicitados:
 >> 
 >> # Query SQL para executar
 >> sql_query = '''
->>             EXEC [dbo].[pr_sel_lucro_contrato_ativo];
+>>             SELECT
+>>                c.contrato_id,
+>>                cl.nome,
+>>                CAST(SUM(t.valor_total * (1 - COALESCE(t.percentual_desconto, 0) / 100) * c.percentual / 100) AS DECIMAL(10, 2)) AS lucro
+>>             FROM contrato c
+>>             JOIN cliente cl ON cl.cliente_id = c.cliente_id
+>>             JOIN transacao t ON c.contrato_id = t.contrato_id
+>>             WHERE c.ativo = 1
+>>             GROUP BY c.contrato_id, cl.nome
 >>             '''
 >> 
 >> try:
@@ -199,7 +207,7 @@ Exemplo de código Python para exibir os dados solicitados:
 >>     print(f'Erro ao executar a consulta SQL: {e}')
 >> 
 >> ~~~
-> Buscando pelo procedure:
+> <a href="exibir_procedure.py">Buscando pelo procedure:</a>
 >> ~~~python
 >> import pandas as pd
 >> import pyodbc
@@ -215,7 +223,7 @@ Exemplo de código Python para exibir os dados solicitados:
 >> 
 >> # Query SQL para executar
 >> sql_query = '''
->>             EXEC pr_sel_lucro_contrato_ativo;
+>>             EXEC pr_sel_lucro_contrato_ativo
 >>             '''
 >> 
 >> try:
