@@ -3,8 +3,6 @@
 - Expandir a coluna num mesmo dataframe;
 - Normalizar os itens dessa coluna de dicionário e dividí-los em dois dataframes separados, seguindo o modelo relacional.
 
-<a href ="main.py">Resposta</a>
-
 > Arquivo data.json 
 >> ~~~JSON
 >> [
@@ -77,6 +75,8 @@
 >>    }
 >> ]
 >> ~~~
+
+<a href ="main.py">Resposta</a>
 
 > # Código
 >> ~~~python
